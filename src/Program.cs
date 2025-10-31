@@ -56,13 +56,14 @@ namespace nwcontrol
             if (
                 (now > startTime1) && (now < endTime1)
                 || (now > startTime2) && (now < endTime2)
+                || true
                 )
             {
                 // In time range, so diable Network
-                Console.WriteLine("Disable network");
+                Console.WriteLine(DateTime.Now + ": Disable network");
                 RunCommand("ipconfig /release *");
             } else {
-                Console.WriteLine("Enable network");
+                Console.WriteLine(DateTime.Now + ": Enable network");
                 RunCommand("ipconfig /renew");
             }
         }
